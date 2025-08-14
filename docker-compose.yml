@@ -14,7 +14,10 @@ services:
     networks:
       - patient-net
   patient-service:
-    image: patient-service
+    build:
+      context: ./Patient-Service
+      dockerfile: Dockerfile
+    image: patient-service:latest
     container_name: patient-service
     ports:
       - "8080:8080"
